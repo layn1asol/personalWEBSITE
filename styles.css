@@ -6,6 +6,11 @@ p {
     margin: 0;
 }
 
+h2 {
+    margin: 0;
+    padding: 0;
+}
+
 html, body {
     margin: 0;
     width: 100%;
@@ -29,33 +34,214 @@ body {
     padding-left: 100px;
     padding-right: 100px;
     grid-column: 1 / 25;
-
+    display: flex;
 }
 
 .header {
-    grid-row: 1 / 5;
-    display: flex;
+    grid-row: 1 / 3;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center; /* Center content horizontally */
+    gap: 1900px;
+    background-color: white;
+    width: 100%;
+    padding: 30px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
     font-size: 50px;
-    font-weight: lighter;
-    background: linear-gradient(-40deg, #00b59e, #4edca8, #93f8ad);
+    background: linear-gradient(-30deg, #002ab5, #534edc, #9b69ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
+/* .logo2 {
+    width: 20%;
+} */
+
+.menu {
+    color: #959595;
+    font-weight: lighter;
+}
+
 .main-content {
-    background-color: grey;
+    margin-top: 120px;
+    display: grid;
     grid-column: 1 / 25;
-    grid-row: 5 / 21;
+}
+
+.info-tab {
+    background-color: #4734ed;
+    grid-row: 3 / 11;
+    padding: 20px;
+    color: #d1ff73;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    gap: 70px;
+}
+
+.info-text {
+    display: flex;
+    flex-direction: column;
+    max-width: 30%; /* Adjust as needed for responsive layout */
+}
+
+
+.info-subtext {
+    color: white;
+    font-size: 30px;
+    font-weight: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.info-sub-subtext {
+    max-width: 100%;
+    padding-top: 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.info-text em {
+    font-style: normal;
+    color: white;
+}
+
+.pfp {
+    width: 500px;
+    border-radius: 100%;
+    padding-bottom: 200px;
+    padding-top: 200px;
+}
+
+.projects-tab {
+    padding-top: 50px;
+    background-color: #3a3a3a;
+    grid-row: 11 / 17;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.projects-tab h2{
+    padding-bottom: 150px;
+}
+
+.projects-container {
+    background-color: #3a3a3a;
+    grid-row: 11 / 17;
+    color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    padding-bottom: 150px;
+}
+
+.project {
+    flex: 1 1 calc(33.333% - 40px);
+    max-width: 440px;
+    margin-bottom: 40px;
+    padding: 20px;
+    width: 440px;
+    height: 620px;
+    background-color: #272727;
+
+    /* Transition for background-color and box-shadow for smooth animation */
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.project:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8); /* Enhanced shadow for a more noticeable effect */
+    background-color: white; /* Smooth background color transition */
+}
+
+.project:hover .project-header {
+    color: #4734ed;
+}
+
+.project:hover .project-desc {
+    color: #000000;
+}
+
+.thumbnail {
+    width: 400px;
+}
+
+.project-header {
+    font-size: 40px;
+    color: #d1ff73;
+}
+
+.project-desc {
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.message-tab {
+    padding-top: 50px;
+    padding-bottom: 500px;
+    background-color: #4734ed;;
+    grid-row: 17 / 23;
+    text-align: center;
+    color: #d1ff73;
+}
+
+.messages-tab em {
+    font-style: normal;
+    color: white;
+}
+
+.message-tab-bg {
+    background-color: white;
 }
 
 .footer {
-    grid-row: 21 / 25;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    color: #959595;
+    background-color: #3a3a3a;
+    grid-row: 23 / 25;
     display: flex;
     align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+    .header {
+        gap: 300px;
+    }
+
+    .info-tab {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .info-text {
+        max-width: 80%; /* Adjust as needed for responsive layout */
+        align-items: center;
+    }
+
+    .pfp {
+        width: 350px;
+    }
+
+    .projects-tab h2{
+        padding-bottom: 50px;
+    }
+
+    .projects-container {
+        gap: 20px;
+        padding-bottom: 20px;
+    }
+}
