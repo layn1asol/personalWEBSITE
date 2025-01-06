@@ -21,7 +21,7 @@
         </map> -->
     </div>
     <div class="menu">
-        <p>|||</p>
+        <p>||||</p>
         <ul class="dropdown">
             <li><a href="#info">about me</a></li>
             <li><a href="#projects">my projects</a></li>
@@ -45,7 +45,7 @@
     </div>
 
     <div class="projects-tab" id="projects">
-        <h2>My projects</h2>
+        <h2>my projects</h2>
         <div class="projects-container">
             <div class="project">
                 <img class="thumbnail" src="project1.png" alt="Project 1 thumbnail">
@@ -57,7 +57,7 @@
                 </div>
             </div>
 
-            <div class="project" id="message">
+            <div class="project">
                 <img class="thumbnail" src="project2.png" alt="Project 2 thumbnail">
                 <div class="project-header">
                     <p>To-do-list app</p>
@@ -80,10 +80,20 @@
             <div class="project">
                 <img class="thumbnail" src="project4.png" alt="Project 4 thumbnail">
                 <div class="project-header">
-                    <p>Test task</p>
+                    <p>Test task #1</p>
                 </div>
                 <div class="project-desc">
                     <p>Frontdev test task that solves...</p>
+                </div>
+            </div>
+
+            <div class="project">
+                <img class="thumbnail" src="project4.png" alt="Project 4 thumbnail">
+                <div class="project-header">
+                    <p>Weather API app</p>
+                </div>
+                <div class="project-desc">
+                    <p>Simple Weather AI app</p>
                 </div>
             </div>
 
@@ -91,16 +101,32 @@
     </div>
 
 
-    <div class="message-tab">
-        <h2>Send me a message<em>!</em></h2>
+    <div class="message-tab" id="message">
+        <h2>send me a message<em>!</em></h2>
         <div class="message-tab-bg">
-            wow
+            <form class="message-panel" id="message-panelID">
+                <div class="form-row1">
+                    <div class="form-tab">
+                        <label for="message-name" class="form-label">name</label>
+                        <input type="text" class="form-control" id="message-name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-tab">
+                        <label for="message-email" class="form-label">email address</label>
+                        <input type="email" class="form-control" id="message-email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+                <div class="form-tab">
+                    <label for="message-quesiton" class="form-label">your message</label>
+                    <input type="text" class="form-control" id="message-quesiton" placeholder="Enter your message" required>
+                </div>
+                <button type="submit" class="btn-submit-message">submit</button>
+            </form>
         </div>
     </div>
 </div>
 
 <div class="footer" id="socials">
-    <p>My socials</p>
+    <p>my socials</p>
 </div>
 <script src="scripts.js"></script>
 </body>

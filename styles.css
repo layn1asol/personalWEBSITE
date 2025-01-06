@@ -50,6 +50,7 @@ body {
     position: fixed;
     top: 0;
     z-index: 100;
+    transition: transform 0.3s ease-in-out;
 }
 
 .logo {
@@ -71,7 +72,7 @@ body {
     display: none; /* Hide dropdown by default */
     justify-content: left;
     position: absolute;
-    top: 100%; /* Position dropdown below the menu */
+    top: 170%; /* Position dropdown below the menu */
     right: 0; /* Align to the right */
     background-color: white;
     list-style: none;
@@ -79,11 +80,16 @@ body {
     padding: 0;
     border-radius: 10px;
     z-index: 100;
+    width: 500px; /* Adjust the width as needed */
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 .menu .dropdown li {
     padding: 20px 20px;
+    text-align: left; /* Ensure text stays aligned left */
 }
+
 
 .menu .dropdown li a {
     font-size: 30px;
@@ -98,14 +104,10 @@ body {
     transform: scale(1.05); /* Slightly enlarge text for emphasis */
 }
 
-.menu .dropdown li:hover {
-    color: #3079ff;
-}
 
-.menu:hover .dropdown {
-    display: block; /* Show dropdown on hover */
+.menu p {
+    font-weight: normal;
 }
-
 
 .main-content {
     margin-top: 120px;
@@ -210,14 +212,16 @@ body {
     height: 620px;
     background-color: #171717;
     border-radius: 5%;
+    cursor: pointer;
 
     /* Transition for background-color and box-shadow for smooth animation */
-    transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+    transition: background-color 0.2s ease-out, box-shadow 0.2s ease-out, color 0.2s ease-out, transform 0.2s ease-out;
 }
 
 .project:hover {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8); /* Enhanced shadow for a more noticeable effect */
     background-color: white; /* Smooth background color transition */
+    transform: scale(1.05); /* Slightly enlarge text for emphasis */
 }
 
 .project:hover .project-header {
@@ -254,6 +258,10 @@ body {
     grid-row: 17 / 23;
     text-align: center;
     color: #d1ff73;
+    /* Add these properties */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .message-tab h2{
@@ -266,16 +274,53 @@ body {
     align-items: center;
     justify-content: center; /* Center content horizontally */
     text-align: center;
-    padding-bottom: 500px;
-    padding-top: 500px;
+    padding-bottom: 200px;
+    padding-top: 200px;
     background-color: white;
     max-width: 80%;
     border-radius: 20px;
+    /* Add this property */
+    width: 100%; /* Add this to ensure the max-width works properly */
+}
+
+.message-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-row1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-tab {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding:20px;
+}
+
+.form-control {
+    font-size: 20px;
+    border: none;
+    padding: 10px;
+    border-bottom: 2px solid #3079ff;
+    width: 100%;
+}
+
+.btn-submit-message {
+    font-size: 20px;
+    padding: 20px;
+    background-color: #3079ff;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
 .footer {
     padding-top: 50px;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
     color: #959595;
     background-color: #292929;
     grid-row: 23 / 25;
