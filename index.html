@@ -33,14 +33,19 @@
 </div>
 
 <div class="main-content">
+    <video autoplay loop muted class="background-gradient">
+        <source src="krumzi-video.mp4" type="video/mp4">
+    </video>
     <div class="info-tab" id="info">
-        <div class="info-tab-container">
-            <div class="info-text">
-                <h2>Hello<em>.</em></h2>
-                <p class="info-subtext">My name is Stanislav Burakov. I'm a trainee frontend developer. This website is used as my portfolio and shows my main projects I worked on.</p>
-                <p class="info-sub-subtext">Currently, I'm learning as software engineering student of the Igor Sikorsky Kyiv Polytechnic University.</p>
+        <div class="message-tab-bg">
+            <div class="info-tab-container">
+                <div class="info-text">
+                    <h2>Hello<em>.</em></h2>
+                    <p class="info-subtext">My name is Stanislav Burakov. I'm a trainee frontend developer. This website is used as my portfolio and shows my main projects I worked on.</p>
+                    <p class="info-sub-subtext">Currently, I'm learning as software engineering student of the Igor Sikorsky Kyiv Polytechnic University.</p>
+                </div>
+                <img class="pfp" src="project1.png" alt="My photo">
             </div>
-            <img class="pfp" src="pfp2.png" alt="My photo">
         </div>
     </div>
 
@@ -108,16 +113,16 @@
                 <div class="form-row1">
                     <div class="form-tab">
                         <label for="message-name" class="form-label">name</label>
-                        <input type="text" class="form-control" id="message-name" placeholder="Enter your name" required>
+                        <input type="text" class="form-input" id="message-name" placeholder="Enter your name" required>
                     </div>
                     <div class="form-tab">
                         <label for="message-email" class="form-label">email address</label>
-                        <input type="email" class="form-control" id="message-email" placeholder="Enter your email" required>
+                        <input type="email" class="form-input" id="message-email" placeholder="Enter your email" required>
                     </div>
                 </div>
                 <div class="form-tab">
-                    <label for="message-quesiton" class="form-label">your message</label>
-                    <input type="text" class="form-control" id="message-quesiton" placeholder="Enter your message" required>
+                    <label for="message-question" class="form-label">your message</label>
+                    <textarea class="form-input" id="message-question" placeholder="Hi, I think we need a design system for our products at Company X. How soon can you hop on to discuss this?" rows="2" minlength="30" required></textarea>
                 </div>
                 <button type="submit" class="btn-submit-message">submit</button>
             </form>
@@ -127,6 +132,9 @@
 
 <div class="footer" id="socials">
     <p>my socials</p>
+    <div class="">
+
+    </div>
 </div>
 <script src="scripts.js"></script>
 </body>
