@@ -32,8 +32,6 @@ body {
 }
 
 .header, .footer {
-    padding-left: 100px;
-    padding-right: 100px;
     grid-column: 1 / 25;
     display: flex;
 }
@@ -53,17 +51,24 @@ body {
     grid-row: 1 / 3;
     flex-direction: row;
     align-items: center;
-    justify-content: center; /* Center content horizontally */
-    gap: 1900px;
+    justify-content: space-between; /* Center content horizontally */
     background-color: white;
     width: 100%;
-    padding: 30px;
+    padding: 20px;
     position: fixed;
     top: 0;
     z-index: 100;
     transition: transform 0.3s ease-in-out;
 }
 
+.logo2 {
+    width: 20%;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 300px;
+}
+
+/*
 .logo {
     font-size: 50px;
     color: #3079ff;
@@ -71,50 +76,56 @@ body {
     background: linear-gradient(-30deg, #002ab5, #534edc, #9b69ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;*/
-}
+
 
 .menu {
     position: relative; /* Allows positioning of dropdown relative to menu */
     color: #959595;
     cursor: pointer;
+    margin-right: 300px;
 }
 
 .menu .dropdown {
-    display: none; /* Hide dropdown by default */
+    opacity: 0; /* Hidden by default */
+    visibility: hidden;
     justify-content: left;
     position: absolute;
-    top: 170%; /* Position dropdown below the menu */
-    right: 0; /* Align to the right */
+    top: 170%;
+    right: 0;
     background-color: white;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 10px;
     border-radius: 10px;
     z-index: 100;
-    width: 500px; /* Adjust the width as needed */
-    transition: background-color 0.3s ease-in-out;
+    width: 10em;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.1s ease-in-out, visibility 0s 0.1s;
+}
+
+.menu .dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.1s ease-in-out, visibility 0s;
 }
 
 .menu .dropdown li {
-    padding: 20px 20px;
+    padding: 20px;
     text-align: left; /* Ensure text stays aligned left */
 }
-
 
 .menu .dropdown li a {
     font-size: 30px;
     text-decoration: none;
-    color: #d1ff73;
+    color: #adcaff;
     display: block;
     transition: color 0.3s ease, transform 0.3s ease; /* Smooth color change */
 }
 
 .menu .dropdown li a:hover {
-    color: #3079ff; /* Change text color on hover */
+    color: #008cff; /* Change text color on hover */
     transform: scale(1.05); /* Slightly enlarge text for emphasis */
 }
-
 
 .menu p {
     font-weight: normal;
@@ -131,11 +142,10 @@ body {
     background-size: cover; /* Ensures the image covers the entire area */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
-    /* background-color: #4734ed; */
     grid-row: 3 / 11;
     padding-bottom: 220px;
-    padding-top: 220px;
-    color: #d1ff73;
+    padding-top: 160px;
+    color: #e7ffbb;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -143,12 +153,56 @@ body {
     gap: 70px;
 }
 
+.tab-bg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding-bottom: 150px;
+    padding-top: 150px;
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent for the blur effect */
+    max-width: 35em;
+    border-radius: 20px;
+    width: 100%;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+
+    /* Blur and noise effect */
+    backdrop-filter: blur(100px); /* Adjust blur intensity as needed */
+    -webkit-backdrop-filter: blur(20px); /* Support for WebKit browsers */
+    position: relative; /* To position the noise pseudo-element */
+    overflow: hidden;
+}
+
+.tab-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow interactions with underlying elements */
+    background: url('data:image/svg;base64,nnnoise.svg') repeat;
+    opacity: 1; /* Adjust opacity for noise intensity */
+}
+
+.message-text {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 19em;
+}
+
+.info-tab h2{
+    text-shadow: 0 0 4px #e7ffbb;
+}
+
 .info-tab-container {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center; /* Center content horizontally */
-    gap: 70px;
+    gap: 120px;
 }
 
 .info-text {
@@ -157,7 +211,6 @@ body {
     max-width: 30%; /* Adjust as needed for responsive layout */
 }
 
-
 .info-subtext {
     color: white;
     font-size: 30px;
@@ -165,6 +218,11 @@ body {
     overflow-wrap: break-word;
     word-wrap: break-word;
     white-space: normal;
+}
+
+.info-subtext em {
+    font-style: normal;
+    color: #e7ffbb;
 }
 
 .info-sub-subtext {
@@ -178,14 +236,14 @@ body {
     white-space: normal;
 }
 
-.info-text em {
+em {
     font-style: normal;
     color: white;
 }
 
 .pfp {
     width: 500px;
-    border-radius: 100%;
+    border-radius: 50%;
     border: 10px solid white;
     position: relative;
 }
@@ -194,7 +252,7 @@ body {
     padding-top: 150px;
     background-color: #292929;
     grid-row: 11 / 17;
-    color: #d1ff73;
+    color: #e7ffbb;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -278,48 +336,24 @@ body {
 }
 
 .message-tab h2{
-    padding-bottom: 50px;
+    padding-bottom: 10px;
 }
-
-.message-tab-bg {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-    padding-bottom: 200px;
-    padding-top: 200px;
-    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent for the blur effect */
-    max-width: 80%;
-    border-radius: 20px;
-    width: 100%;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-
-    /* Blur and noise effect */
-    backdrop-filter: blur(20px); /* Adjust blur intensity as needed */
-    -webkit-backdrop-filter: blur(20px); /* Support for WebKit browsers */
-    position: relative; /* To position the noise pseudo-element */
-    overflow: hidden;
-}
-
-.message-tab-bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; /* Allow interactions with underlying elements */
-    background: url('data:image/svg;base64,nnnoise.svg') repeat;
-    opacity: 1; /* Adjust opacity for noise intensity */
-}
-
 
 .message-panel {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+}
+
+.message-subtext {
+    color: white;
+    font-size: 0.6em;
+    font-weight: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+    padding-bottom: 50px;
 }
 
 .form-row1 {
@@ -331,34 +365,41 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding:20px;
+    padding: 10px;
 }
 
 .form-label {
-    font-size: 50px;
+    font-size: 0.4em;
+    font-weight: normal;
 }
 
 .form-input {
     font-size: 30px;
     border: none;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    border-bottom: 2px solid #87b6ff;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-bottom: 2px solid #a6a6a6;
     width: 100%;
     overflow: auto;
-    color: #3079ff;
+    color: #a6a6a6;
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;
     background: transparent;
+    transition: color 0.1s ease-out, outline 0.1s ease-out, border-bottom 0.1s ease-out;
 }
 
 .form-input::placeholder {
-    color: #87b6ff;
+    color: #a6a6a6;
 }
 
 .form-input:focus {
+    color: white;
     outline: none;
-    border-bottom: 2px solid #3079ff;
+    border-bottom: 2px solid white;
+}
+
+.form-input:focus::placeholder {
+    color: transparent;
 }
 
 #message-question {
@@ -366,39 +407,63 @@ body {
     overflow-x: hidden;
     white-space: normal; /* Allow normal line wrapping */
     text-overflow: ellipsis;
-    width: 520px;
+    width: 25em;
     resize: none;
+
 }
 
-
 .btn-submit-message {
-    font-size: 20px;
-    padding: 20px;
-    background-color: #3079ff;
-    color: white;
+    font-size: 1.5rem;
+    margin-top: 50px;
+    padding: 30px;
+    background-color: #171717;
+    color: #717171;
     border: none;
     cursor: pointer;
-    width: 70%;
+    width: 50%;
     font-family: 'Montserrat', sans-serif;
-    font-weight: normal;
-    border-radius: 10em;
+    font-weight: bold;
+    border-radius: 1.2em;
+    transition: box-shadow 0.2s ease-out, color 0.2s ease-out, background-color 0.2s ease-out;
+}
+
+.btn-submit-message:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    color: #3079ff;
+    background-color: white;
 }
 
 .footer {
     padding-top: 50px;
     padding-bottom: 50px;
+    padding-left: 30px;
     color: #959595;
     background-color: #292929;
     grid-row: 23 / 25;
     display: flex;
     align-items: center;
+    text-align: center;
+    gap: 20px;
 }
 
-@media screen and (max-width: 768px) {
-    .header {
-        gap: 160px;
-    }
+.logos {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
 
+.github {
+    width: 15%;
+    height: auto;
+}
+
+.linkedin {
+    width: 14%;
+    height: auto;
+}
+
+
+@media screen and (max-width: 768px) {
     .info-tab {
         flex-direction: column;
         gap: 40px;
@@ -412,7 +477,7 @@ body {
     }
 
     .info-text {
-        max-width: 80%; /* Adjust as needed for responsive layout */
+        max-width: 80%;
         align-items: center;
     }
 

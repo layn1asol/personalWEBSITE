@@ -1,19 +1,14 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const menu = document.querySelector('.menu');
     const dropdown = document.querySelector('.menu .dropdown');
 
     menu.addEventListener('click', () => {
-        const isVisible = dropdown.style.display === 'block';
-        dropdown.style.display = isVisible ? 'none' : 'block'; // Toggle visibility
+        dropdown.classList.toggle('show'); // Toggle the 'show' class for smooth transitions
     });
 
     document.addEventListener('click', (event) => {
         if (!menu.contains(event.target)) {
-            dropdown.style.display = 'none'; // Hide dropdown when clicking outside
+            dropdown.classList.remove('show'); // Remove 'show' class when clicking outside
         }
     });
 });
-
-
-
